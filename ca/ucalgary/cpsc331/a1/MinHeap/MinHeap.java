@@ -4,25 +4,28 @@ import ca.ucalgary.cpsc331.a1.PriorityQueue;
 
 public class MinHeap implements PriorityQueue {
 
-  public int size;
+  public int numElements = 0;
   public int N;
 
   @Override
   public boolean empty() {
-    return size == 0;
+    return numElements == 0;
 
   }
 
   @Override
   public boolean full() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'full'");
+    return numElements == N;
   }
 
   @Override
   public void insert(int key) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'insert'");
+    if (full()) {
+      throw new RuntimeException("Heap is full");
+    }
+
+    numElements++;
+
   }
 
   @Override
