@@ -1,3 +1,8 @@
+// Samer Swedan 
+//30098990 
+//samer.swedan@ucalgary.ca
+// CPSC 331 Assignment 1 4)
+
 package ca.ucalgary.cpsc331.a1;
 
 public class MinHeap implements PriorityQueue {
@@ -61,6 +66,7 @@ public class MinHeap implements PriorityQueue {
      * @param key the new key
      */
     public void heapDecreaseKey(int i, int key) {
+
         if (key > heap[i]) {
             throw new RuntimeException("New key is larger than current key");
         }
@@ -111,6 +117,7 @@ public class MinHeap implements PriorityQueue {
 
     /**
      * Returns the size of the heap.
+     * Based on the psuedocode from the textbook.
      * 
      * @return the size of the heap
      */
@@ -153,6 +160,40 @@ public class MinHeap implements PriorityQueue {
 
     private int rightChild(int i) {
         return 2 * i + 2;
+    }
+
+    /**
+     * Returns a string representation of the heap as described
+     * in the assignment specification.
+     * 
+     * @return a string representation of the min-heap
+     */
+    @Override
+    public String toString() {
+
+        // initialize a string builder
+        StringBuilder sb = new StringBuilder();
+
+        // append the size of the heap to the string
+        sb.append("size = ").append(size).append("\n");
+
+        // calculate the height of the heap
+        int height = (int) Math.ceil(Math.log(size + 1) / Math.log(2));
+        int index = 0;
+
+        // For each level in the heap
+        for (int i = 0; i < height; i++) {
+            int elementsInRow = (int) Math.pow(2, i);
+            for (int j = 0; j < elementsInRow && index < size; j++) {
+                sb.append(heap[index++]);
+                if (j < elementsInRow - 1 && index < size) {
+                    sb.append(" ");
+                }
+            }
+            sb.append("\n");
+        }
+
+        return sb.toString();
     }
 
 }

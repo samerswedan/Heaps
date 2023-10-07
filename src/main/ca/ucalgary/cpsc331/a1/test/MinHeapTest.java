@@ -136,3 +136,36 @@ public class MinHeapTest {
     }
 
 }
+
+    @Test
+    public void testToString() {
+        MinHeap heap = new MinHeap(5);
+        heap.insert(3);
+        heap.insert(2);
+        heap.insert(1);
+        heap.insert(5);
+        heap.insert(4);
+        assertEquals("size = 5\n1 \n2 3 \n4 5 \n", heap.toString());
+    }
+
+    @Test
+    public void testToStringEmpty() {
+        MinHeap heap = new MinHeap(5);
+        assertEquals("size = 0\n", heap.toString());
+    }
+
+    @Test
+    public void testToStringSingle() {
+        MinHeap heap = new MinHeap(5);
+        heap.insert(1);
+        assertEquals("size = 1\n1 \n", heap.toString());
+    }
+
+@Test
+public void testToStringRepeated() {
+    MinHeap heap = new MinHeap(5);
+    heap.insert(1);
+    heap.insert(1);
+    heap.insert(1);
+    assertEquals("size = 3\n1 \n1 1 \n", heap.toString());
+}
