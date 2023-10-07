@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "test",
+      "request": "launch",
+      "mainClass": "ca.ucalgary.cpsc331.a1.test",
+      "projectName": "A1_4f231999"
+    },
+    {
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
