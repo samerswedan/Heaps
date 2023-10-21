@@ -3,7 +3,7 @@
 //samer.swedan@ucalgary.ca
 // CPSC 331 Assignment 1 4)
 
-package ca.ucalgary.cpsc331.a1;
+package main.ca.ucalgary.cpsc331.a1;
 
 public class MinHeap implements PriorityQueue {
 
