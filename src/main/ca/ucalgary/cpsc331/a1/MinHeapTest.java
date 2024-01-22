@@ -1,8 +1,7 @@
-package ca.ucalgary.cpsc331.a1.test;
+package main.ca.ucalgary.cpsc331.a1;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import ca.ucalgary.cpsc331.a1.MinHeap;
 
 public class MinHeapTest {
 
@@ -135,8 +134,6 @@ public class MinHeapTest {
         }
     }
 
-}
-
     @Test
     public void testToString() {
         MinHeap heap = new MinHeap(5);
@@ -161,11 +158,13 @@ public class MinHeapTest {
         assertEquals("size = 1\n1 \n", heap.toString());
     }
 
-@Test
-public void testToStringRepeated() {
-    MinHeap heap = new MinHeap(5);
-    heap.insert(1);
-    heap.insert(1);
-    heap.insert(1);
-    assertEquals("size = 3\n1 \n1 1 \n", heap.toString());
+    @Test
+    public void testToStringRepeated() {
+        MinHeap heap = new MinHeap(5);
+        heap.insert(1);
+        heap.insert(1);
+        heap.insert(1);
+        assertEquals("size = 3\n1 \n1 1 \n", heap.toString());
+    }
+
 }
